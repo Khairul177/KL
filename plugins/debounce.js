@@ -1,12 +1,14 @@
 let { spawn }  = require('child_process');
 let handler  = async (m, { conn }) => {
+  if (!process.send) throw 'Dont: node main.js\nDo: node index.js'
   if (global.conn.user.jid == conn.user.jid) {
-    let child = spawn(process.argv[0], process.argv.slice(1), { detached: true })
-    child.unref()
-    await conn.reply(m.chat, 'Mereset bot:v', m)
-    process.exit()
-  } else conn.reply(m.chat, '_eeeeeiiittsssss..._', m)
+    await m.reply('Sedang Mereset Bot...\nMohon tunggu sekitar 1 menit')
+    await global.DATABASE.save()
+    process.send('reset')
+  } else throw '_eeeeeiiittsssss..._'
 }
+handler.help = ['debounce' + (process.send ? '' : ' (Not working)')]
+handler.tags = ['host']
 handler.command = /^debounce$/i
 handler.owner = true
 handler.mods = false

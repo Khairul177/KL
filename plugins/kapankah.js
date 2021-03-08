@@ -4,7 +4,10 @@ let handler = async (m, { conn, text }) => {
 *Jawaban:* ${Math.floor(Math.random() * 10)} ${pickRandom(['detik', 'menit', 'jam', 'hari', 'minggu', 'bulan', 'tahun', 'dekade', 'abad'])} lagi ...
 `.trim(), m)
 }
-handler.command = /^kapan(kah)?/i
+handler.help = ['', 'kah'].map(v => 'kapan' + v + ' <text>?')
+handler.tags = ['kerang']
+handler.customPrefix = /(\?$)/
+handler.command = /^kapan(kah)?$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false

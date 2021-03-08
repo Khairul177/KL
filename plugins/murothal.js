@@ -38,6 +38,8 @@ Juz 29 ⇨ http://j.mp/2bFRyBF
 Juz 30 ⇨ http://j.mp/2bFREcc
 `.trim(), m)
 }
+handler.help = ['murothal']
+handler.tags = ['quotes']
 handler.command = /^(murothal)$/i
 handler.owner = false
 handler.mods = false

@@ -1,9 +1,10 @@
-let handler = async (m, { conn, args }) => {
+let handler = async (m, { conn, args, usedPrefix }) => {
   let users = m.mentionedJid
-  conn.groupDemoteAdmin(m.chat, users)
-conn.reply(m.chat, 'Aowkwkwk anda kena demote Owner !! Selamat ya cuy...',m)
+  for (let user of users) conn.groupDemoteAdmin(m.chat, user).catch(console.log)
 }
-handler.command = /^(demote|member|v)$/i
+handler.help = ['demote','member','↓'].map(v => v + ' @user')
+handler.tags = ['admin']
+handler.command = /^(demote|member|↓)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
