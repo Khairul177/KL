@@ -8,8 +8,8 @@ Simple WhatsApp Bot
 > pkg install nodejs
 > pkg install ffmpeg
 > pkg install imagemagick
-> git clone https://github.com/Arya274/Arya-Bot
-> cd Arya-Bot
+> git clone https://github.com/Khairul177/kl-bot.git
+> cd kl-bot
 > npm install
 ```
 ###### Run
